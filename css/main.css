@@ -1,17 +1,55 @@
-main {
+/**
+ * main.css
+ * contains the general styling used for the advent calendar
+ */
+
+/*General*/
+* {
+    margin: 0;
+    
+}
+
+html, body {
+    height: 100%;
+    box-sizing: border-box;
+
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    position: absolute;
+    
+    display: flex;
+    flex-direction: column;
+
     background-color: #30475e;
 }
 
 footer {
+    position: relative;
+
+    flex: 1;
+    width: 100%;
+
     background-color: #cbaf87;
 }
 
+/*Calendar*/
 .calendar {
-    display: grid;
-    grid-template-columns: auto auto auto;
+    position: relative;
+    
+    display: inline-grid;
+    grid-template-columns: 10% 10% 10% 10% 10% 10% 10%;
+    grid-template-rows: 10em 10em 10em 10em;
+    justify-content: center;
+    padding: 10em 10em 2em 10em;
 }
 
 .cards {
-    font-family: 'Open Sans', sans-serif;
     color: #faf0dc;
+    margin: 0 auto;
+}
+
+.content-info {
+    overflow: hidden;
 }
