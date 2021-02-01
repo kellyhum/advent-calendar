@@ -1,55 +1,122 @@
 /**
  * main.css
- * contains the general styling used for the advent calendar
+ * Contains the general styling used for the advent calendar
+ * 
+ * Guidelines for Formating:
+ * Positioning
+ * Display/Box/Grid Models
+ * Color/Typography
+ * Other
  */
 
 /*General*/
 * {
     margin: 0;
-    
-}
-
-html, body {
-    height: 100%;
+    padding: 0;
     box-sizing: border-box;
-
-    font-family: 'Open Sans', sans-serif;
 }
 
 body {
-    position: absolute;
+    position: relative;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     
+    color: #dbedf3;
+    background-color: #404b69;
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1, h3, h4 {
+    position: relative;
+
+    font-family: 'Proza Libre', sans-serif;
+    font-size: 3.25rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+h4 {
+    font-size: 1rem;
+}
+
+div {
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+p {
+    position: relative;
+
+    font-size: 1rem;
+}
+
+/*Title Text*/
+.title {
+    margin: 5rem auto 1rem;
+}
+
+/*Countdown*/
+.countdown {
+    position: relative;
+
+    margin: 1rem auto;
+
     display: flex;
     flex-direction: column;
 
-    background-color: #30475e;
 }
 
-footer {
-    position: relative;
+.dates {
+    position: inherit;
 
-    flex: 1;
-    width: 100%;
-
-    background-color: #cbaf87;
+    display: inherit;
+    justify-content: space-between;
 }
 
-/*Calendar*/
+/*Main Calendar*/
 .calendar {
     position: relative;
-    
-    display: inline-grid;
-    grid-template-columns: 10% 10% 10% 10% 10% 10% 10%;
-    grid-template-rows: 10em 10em 10em 10em;
-    justify-content: center;
-    padding: 10em 10em 2em 10em;
+    margin: 5rem auto;
+
+    display: grid;
+    grid-template: repeat(4, 12rem) / repeat(7, 13rem);
+    gap: 0.5rem;
+
+    text-align: center;
+}
+
+.calendar .cards:nth-child(3n-5) {
+    background-color: #495c8f;
+}
+
+.calendar .cards:nth-child(4n-2) {
+    background-color: #0e767e;
 }
 
 .cards {
-    color: #faf0dc;
-    margin: 0 auto;
+    position: relative;
+
+    background-color: #d6556a;
+    border-radius: 10%;
+
+    cursor: pointer;
+}
+
+.date {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-size: 2.5rem;
+    font-weight: 900;
 }
 
 .content-info {
-    overflow: hidden;
+    display: none;
 }
