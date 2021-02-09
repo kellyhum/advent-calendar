@@ -6,7 +6,7 @@
 
         <!--Fonts-->
         <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Proza+Libre:ital,wght@1,500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Oswald&display=swap" rel="stylesheet">
 
         <!--Favicon-->
         <link rel="icon" type="image/png" href="img/favicon.png">
@@ -18,19 +18,17 @@
     </head>
     <body>
         <!--Title Text-->
-        <div class="title">
-            <h1>Ho Ho Ho!</h1>
-        </div>
+        <h1 class="title">Ho Ho Ho!</h1>
 
         <!--Countdown Clock-->
         <div class="countdown">
-           <div class="dates">
-               <div id="days">12</div>
-               <div id="hours">3</div>
-               <div id="minutes">45</div>
-               <div id="seconds">22</div>
-           </div> 
-           <h4>till Christmas...</h4>
+           <ul class="time">   
+               <li><span id="days"></span>Days</li>
+               <li><span id="hours"></span>Hours</li>
+               <li><span id="minutes"></span>Minutes</li>
+               <li><span id="seconds"></span> Seconds</li>
+           </ul> 
+           <h4 class="countdown-text"><span class="countdown-text-inner">till Christmas...</span></h4>
         </div>
 
         <!--Calendar-->
@@ -213,7 +211,24 @@
         </div>
 
         <!--Scripts-->
-        <script src="/js/main.js"></script>
+        <script>
+            let current = new Date().getTime();
+            let countdownDate = new Date(2021, 11, 25).getTime();
+
+            let difference = countdownDate - current;
+
+            function calculate() {
+                let seconds = 1000;
+                let minutes = 1000 * 60;
+                let hours = minutes * 60;
+                let days = hours * 24;
+               
+               document.write(current);
+            }
+
+            calculate();
+        </script>
         <script src="/js/countdown.js"></script>
+        <script src="/js/main.js"></script>
     </body>
 </html>
