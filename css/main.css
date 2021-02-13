@@ -58,7 +58,7 @@ p {
 
 /*----Title Text----*/
 .title {
-    margin: 5rem auto 2.5rem;
+    margin: 5rem auto 1.5rem;
 
     font-family: 'Oswald', sans-serif;
     text-shadow: 0.3rem 0.3rem 0 rgba(228, 111, 99, 0.8);
@@ -86,6 +86,15 @@ p {
 
 .time li {
     margin: 0 0.75rem;
+
+    display: inline-block;
+}
+
+.time li span {
+    display: block;
+
+    font-size: 2rem;
+    text-align: center;
 }
 
 /*Ribbon*/
