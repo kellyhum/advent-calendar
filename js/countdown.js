@@ -1,7 +1,11 @@
+/*
+ *countdown.js
+ *Contains the code used for the Christmas countdown
+ */
 function calculate() {
     //Declaring variables for the current date and end date
     const current = new Date().getTime();
-    const countdownDate = new Date('February 11, 2021, 00:00:00').getTime();
+    const countdownDate = new Date('December 25, 2021, 00:00:00').getTime();
 
     const difference = countdownDate - current;
 
@@ -12,11 +16,20 @@ function calculate() {
     const hours = Math.floor(difference/(60*60*1000) % 24);
     const days = Math.floor(difference/(24*60*60*1000));
 
-    console.log(days + ' days ' + hours + ' hours ' + minutes + ' minutes ' + seconds + ' seconds '); 
+    //Link JS code to HTML document via id's
+    document.getElementById('seconds').innerHTML = seconds;
+    document.getElementById('minutes').innerHTML = minutes;
+    document.getElementById('hours').innerHTML = hours;
+    document.getElementById('days').innerHTML = days;
+
+    //After countdown finishes show message
+    if (difference <= 0) {
+        
+    }
 }
-calculate();
 
-//Link JS code to HTML document via "dates" class 
+const timer = setInterval(() => {
+    calculate();
+}, 1000);
 
 
-//After countdown finishes do...

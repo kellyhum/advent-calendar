@@ -21,7 +21,7 @@
         <h1 class="title">- Ho Ho Ho! -</h1>
 
         <!--Countdown Clock-->
-        <div class="countdown">
+        <div class="countdown" onload="countdown.js">
            <ul class="time">   
                <li><span id="days"></span>Days</li>
                <li><span id="hours"></span>Hours</li>
@@ -211,24 +211,7 @@
         </div>
 
         <!--Scripts-->
-        <script>
-            let current = new Date().getTime();
-            let countdownDate = new Date(2021, 11, 25).getTime();
-
-            let difference = countdownDate - current;
-
-            function calculate() {
-                let seconds = 1000;
-                let minutes = 1000 * 60;
-                let hours = minutes * 60;
-                let days = hours * 24;
-               
-               document.write(current);
-            }
-
-            calculate();
-        </script>
-        <script src="/js/countdown.js"></script>
+        <script src="js/countdown.js"></script>
         <script src="/js/main.js"></script>
     </body>
 </html>
