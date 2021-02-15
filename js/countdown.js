@@ -1,6 +1,6 @@
 /*
- *countdown.js
- *Contains the code used for the Christmas countdown
+ * countdown.js
+ * Contains the code used for the Christmas countdown
  */
 function calculate() {
     //Declaring variables for the current date and end date
