@@ -176,6 +176,8 @@ p {
     margin: 5rem auto;
 
     text-align: center;
+
+    perspective: 1000px;
 }
 
 .cards {
@@ -184,10 +186,19 @@ p {
     background-color: #DDA174;
     border-radius: 8%;
 
-    transition: box-shadow 0.6s, transform 0.2s, border 0.2s;
+   /* transition: box-shadow 0.4s, transform 0.1s, border 0.1s;*/
     cursor: pointer;
+
+    transform-style: preserve-3d;
+    transition: 0.5s;
+    backface-visibility: hidden;
 }
 
+.cards:active {
+    transform: rotateY(180deg);
+}
+
+/*Applying Different Colors*/
 .calendar .cards:nth-child(3n-8) {
     background-color: #5EBA8E;
 }
@@ -196,13 +207,15 @@ p {
     background-color: #E46F63;
 }
 
-.cards:hover {
+/*Hover Effects*/
+/*.cards:hover {
     transform: translate(-10px, -10px);
     border: 3px solid #EDEDED;
     box-shadow: 10.5px 10.5px 0 -2px #23282F, 10.5px 10.5px 0 0 rgba(237, 237, 237, 0.75);
 }
 
-.date {
+/*Card Front and Back*/
+.card-front {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -210,24 +223,19 @@ p {
 
     font-size: 2.25rem;
     font-weight: 900;
+
+    
 }
 
-.content {
+.card-back {
     position: absolute;
-    width: 100%;
     height: 100%;
-
-    display: flex;
-    justify-content: center;
-
-    z-index: -1;
-}
-
-.content-info {
-    position: absolute;
   
     display: block;
-    opacity: 0;
+    border-radius: inherit;
 
     text-align: left;
+
+    background-color: #DDA174;
+    transform: rotateY(180deg);
 }
