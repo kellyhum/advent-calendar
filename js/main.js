@@ -1,18 +1,16 @@
 /**
  * main.js
- * used for the "page" transitions and on-click functions
+ * used for the card flipping transitions
  */
 
-//declaring global variables
-const click = document.querySelector(.cards);
-const closingButtons = document.querySelectorAll(button);
+const flip = document.querySelectorAll('.cards');
 
-//function for the expanding transition
-function expand() {
-
+function transform() {
+    if (this.classList.contains('clicked')) {
+        this.classList.remove('clicked');
+    } else {
+        this.classList.add('clicked');
+    }
 }
 
-//function for the collapsing transition
-function collapse() {
-
-}
+flip.forEach(flip => flip.addEventListener("click", transform));
