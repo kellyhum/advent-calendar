@@ -185,17 +185,18 @@ p {
 
     background-color: #DDA174;
     border-radius: 8%;
+    height: 100%;
 
    /* transition: box-shadow 0.4s, transform 0.1s, border 0.1s;*/
     cursor: pointer;
 
     transform-style: preserve-3d;
-    transition: 0.5s;
-    backface-visibility: hidden;
+    transition: 0.2s;
 }
 
-.cards:active {
-    transform: rotateY(180deg);
+/*On Click JS Class */
+.cards.clicked {
+    transform: rotateY(180deg) scale(-1, 1);
 }
 
 /*Applying Different Colors*/
@@ -223,19 +224,18 @@ p {
 
     font-size: 2.25rem;
     font-weight: 900;
-
-    
 }
 
 .card-back {
     position: absolute;
     height: 100%;
+    padding: 5%;
   
     display: block;
     border-radius: inherit;
 
     text-align: left;
+    background-color: #81b29a;
 
-    background-color: #DDA174;
-    transform: rotateY(180deg);
+    backface-visibility: hidden;
 }
