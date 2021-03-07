@@ -182,8 +182,8 @@ p {
 
 .cards {
     position: relative;
-
     background-color: #DDA174;
+    
     border-radius: 8%;
     height: 100%;
 
@@ -196,7 +196,7 @@ p {
 
 /*On Click JS Class */
 .cards.clicked {
-    transform: rotateY(180deg) scale(-1, 1);
+    transform: rotateY(180deg);
 }
 
 /*Applying Different Colors*/
@@ -238,4 +238,5 @@ p {
     background-color: #81b29a;
 
     backface-visibility: hidden;
+    transform: rotateY(180deg);
 }
