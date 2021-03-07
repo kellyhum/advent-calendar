@@ -5,10 +5,6 @@
 
 const flip = document.querySelectorAll('.cards');
 
-window.onload = function() {
-    this.classList.remove('clicked');
-}
-
 function transform() {
     this.classList.toggle('clicked');
 }
