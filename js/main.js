@@ -5,12 +5,12 @@
 
 const flip = document.querySelectorAll('.cards');
 
+window.onload = function() {
+    this.classList.remove('clicked');
+}
+
 function transform() {
-    if (this.classList.contains('clicked')) {
-        this.classList.remove('clicked');
-    } else {
-        this.classList.add('clicked');
-    }
+    this.classList.toggle('clicked');
 }
 
 flip.forEach(flip => flip.addEventListener("click", transform));
